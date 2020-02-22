@@ -19,4 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'ProfileController@index')->name('profile');
+
+Route::prefix('profile')->group(function () {
+    Route::any('', 'ProfileController@show')->name('profile');
+    Route::any('edit', 'ProfileController@edit')->name('profile.edit');
+});
