@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::prefix('profile')->group(function () {
-    Route::any('', 'ProfileController@show')->name('profile');
-    Route::any('edit', 'ProfileController@edit')->name('profile.edit');
+    Route::get('', 'ProfileController@show')->name('profile');
+    Route::get('edit', 'ProfileController@edit')->name('profile.edit');
+    Route::post('store', 'ProfileController@store')->name('profile.store');
 });
