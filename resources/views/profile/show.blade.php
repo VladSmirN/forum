@@ -16,9 +16,7 @@
                             <li class="list-group-item">Имя : {{$name}}</li>
                             <li class="list-group-item">Почта : {{$email}} </li>
                             <li class="list-group-item">Описание : {{$description}}</li>
-                            <li class="list-group-item"><a class="col-md-12" href="{{ route('profile.edit') }}">
-                                    {{ __('Редактировать') }}
-                                </a></li>
+                            <li class="list-group-item"> <a href="/profile/edit" class="btn  btn-primary float-right " role="button">Редактировать</a></li>         
                         </ul>
 
                     </div>

@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Профиль</div>
+                <div class="card-header">Редактировать профиль</div>
 
                 <div class="card-body">
 
@@ -30,10 +30,10 @@
                         </div>
                          
                             @foreach ($errors->all() as $error)
-                                <div class="alert alert-danger">{{ $error }}</div>
+                                <div class="alert alert-danger ">{{ $error }}</div>
                             @endforeach
-                        
-                        {{Form::submit('Сохранить', ['class'=>'btn btn-primary'])}}
+                        {{Form::submit('Сохранить', ['class'=>'btn btn-primary float-right'])}}
+                        <a href="/profile" class="btn  bg-light float-right mr-3" role="button">Отмена</a>
                     {!! Form::close() !!}
                     
                 </div>
