@@ -13,15 +13,15 @@
                     {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
                             {{Form::label('name', 'Имя')}}
-                            {{Form::text('name', $name, ['class' => 'form-control', 'placeholder' => 'Title'])}}
+                            {{Form::text('name', $profile->name, ['class' => 'form-control', 'placeholder' => 'Title'])}}
                         </div>
                         <div class="form-group">
                             {{Form::label('email', 'email')}}
-                            {{Form::text('email', $email, ['class' => 'form-control', 'placeholder' => 'Title'])}}
+                            {{Form::text('email', $profile->email, ['class' => 'form-control', 'placeholder' => 'Title'])}}
                         </div>
                         <div class="form-group">
                             {{Form::label('description', 'Описание')}}
-                            {{Form::textarea('description', $description, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text' ])}}
+                            {{Form::textarea('description', $profile->description, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text' ])}}
                         </div>
                         <div class="form-group">
                             {{Form::label('avatar', 'Загрузить новое фото')}}
