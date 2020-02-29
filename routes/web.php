@@ -25,3 +25,11 @@ Route::prefix('profile')->group(function () {
     Route::get('edit', 'ProfileController@edit')->name('profile.edit');
     Route::post('store', 'ProfileController@store')->name('profile.store');
 });
+
+Route::get('catalog', 'ThreadController@catalog')->name('thread.catalog');
+
+Route::prefix('thread')->group(function () {
+    Route::get('create', 'ThreadController@create')->name('thread.create');
+    Route::get('show', 'ThreadController@show')->name('thread.show');
+    Route::post('store', 'ThreadController@store')->name('thread.store');
+});
