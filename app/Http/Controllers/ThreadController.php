@@ -31,7 +31,10 @@ class ThreadController extends Controller
     }
     public function catalog()
     {
-        
-        return view('thread/catalog');
+        $threads = Thread::paginate(15);
+        foreach($threads as $thread){
+            $thread->image = Storage::url($thread->image);
+        }
+        return view('thread/catalog',compact('threads'));
     }
 }
