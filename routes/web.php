@@ -30,6 +30,6 @@ Route::get('catalog', 'ThreadController@catalog')->name('thread.catalog');
 
 Route::prefix('thread')->group(function () {
     Route::get('create', 'ThreadController@create')->name('thread.create');
-    Route::get('show', 'ThreadController@show')->name('thread.show');
+    Route::get('/{id}', 'ThreadController@show')->name('thread.show');
     Route::post('store', 'ThreadController@store')->name('thread.store');
 });

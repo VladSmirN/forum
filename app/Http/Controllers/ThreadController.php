@@ -31,10 +31,14 @@ class ThreadController extends Controller
     }
     public function catalog()
     {
-        $threads = Thread::paginate(15);
+        $threads = Thread::paginate(12);
         foreach($threads as $thread){
             $thread->image = Storage::url($thread->image);
         }
         return view('thread/catalog',compact('threads'));
+    }
+    public function show($id)
+    {
+        return view('thread/show',compact('id'));
     }
 }
