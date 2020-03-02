@@ -8,18 +8,9 @@
                 <div class="card-body">
                     <div class="row">
                         @foreach ($threads as $thread)
-                        <div class="col-sm-12 col-md-6 col-lg-4 mt-2">
-                            <div class="card" style="width: 18rem;">
-                                <img
-                                    class="card-img-top"
-                                    src="{{$thread->image}}"
-                                    alt="Card image cap"
-                                />
-                                <div class="card-body">
-                                    <p class="card-text">{{$thread->title}}</p>
-                                </div>
-                            </div>
-                        </div>
+                        <thread-component
+                            :thread="{{ json_encode($thread) }}"
+                        ></thread-component>
                         @endforeach
                     </div>
                     @if($threads->total() > $threads->count())
