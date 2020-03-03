@@ -40,7 +40,7 @@ class ThreadController extends Controller
     }
     public function show($id)
     {   
-        $columns = ['text', 'user_name','user_id', 'image', 'title'];
+        $columns = ['text', 'user_name','user_id', 'image', 'title','id'];
         $thread = Thread::find($id,$columns);
         $thread->image = Storage::url($thread->image);
         return view('thread/show',compact('thread'));

@@ -33,3 +33,8 @@ Route::prefix('thread')->group(function () {
     Route::get('/{id}', 'ThreadController@show')->name('thread.show');
     Route::post('store', 'ThreadController@store')->name('thread.store');
 });
+
+Route::prefix('message/{thread_id}')->group(function () {
+    Route::get('create', 'MessageController@create')->name('message.create');
+    Route::post('store', 'MessageController@store')->name('message.store');
+});

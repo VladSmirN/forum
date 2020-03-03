@@ -15,6 +15,19 @@
                         style="margin-right: 15px; max-width: 400px;"
                     />
                     <div class="text-justify">{{$thread->text}}</div>
+
+                    <a
+                        href="/message/{{$thread->id}}/create"
+                        class="btn  btn-primary float-right "
+                        role="button"
+                        >Оставить комментарий</a
+                    >
+                    <a
+                        href="/catalog"
+                        class="btn  bg-light float-right mr-3"
+                        role="button"
+                        >В каталог</a
+                    >
                 </div>
             </div>
         </div>
