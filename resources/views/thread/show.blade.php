@@ -12,7 +12,7 @@
                     <img
                         src="{{$thread->image}}"
                         class="rounded float-left"
-                        style="margin-right: 15px;"
+                        style="margin-right: 15px; max-width: 400px;"
                     />
                     <div class="text-justify">{{$thread->text}}</div>
                 </div>
