@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Thread;
+use App\Messages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -38,7 +39,10 @@ class ThreadController extends Controller
         return view('thread/catalog',compact('threads'));
     }
     public function show($id)
-    {
-        return view('thread/show',compact('id'));
+    {   
+        $columns = ['text', 'user_name','user_id', 'image', 'title'];
+        $thread = Thread::find($id,$columns);
+        $thread->image = Storage::url($thread->image);
+        return view('thread/show',compact('thread'));
     }
 }
