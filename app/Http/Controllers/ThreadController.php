@@ -22,6 +22,8 @@ class ThreadController extends Controller
         $thread->image = Storage::putFile('public/images', $request->file('image'));
         $thread->title = $request->input('title');
         $thread->text = $request->input('text');
+        $thread->user_id = auth()->user()->id;
+        $thread->user_name = auth()->user()->name;
         $thread->save();
 
         return redirect('catalog');
@@ -43,7 +45,7 @@ class ThreadController extends Controller
         $columns = ['text', 'user_name','user_id', 'image', 'title','id'];
         $thread = Thread::find($id,$columns);
         $thread->image = Storage::url($thread->image);
-
+       
         $messages = Messages::where('thread_id',$thread->id)->paginate(300);
         foreach($messages as $message){
             $message->image = $message->image ? Storage::url($message->image) : false;
