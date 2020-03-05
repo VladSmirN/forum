@@ -16,17 +16,17 @@ Auth::routes();
 
 Route::prefix('profile')->group(function () {
     Route::get('', 'ProfileController@show')->name('profile');
-    Route::get('/{id}', 'ProfileController@showAlien')->name('profile.showAlien');
     Route::get('edit', 'ProfileController@edit')->name('profile.edit');
     Route::post('store', 'ProfileController@store')->name('profile.store');
+    Route::get('/{id}', 'ProfileController@showAlien')->name('profile.showAlien');
 });
 
 Route::get('catalog', 'ThreadController@catalog')->name('thread.catalog');
 
 Route::prefix('thread')->group(function () {
-    Route::get('create', 'ThreadController@create')->name('thread.create');
-    Route::get('/{id}', 'ThreadController@show')->name('thread.show');
+    Route::get('create', 'ThreadController@create')->name('thread.create'); 
     Route::post('store', 'ThreadController@store')->name('thread.store');
+    Route::get('/{id}', 'ThreadController@show')->name('thread.show');
 });
 
 Route::prefix('message/{thread_id}')->group(function () {
