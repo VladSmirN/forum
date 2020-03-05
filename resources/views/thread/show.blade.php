@@ -7,14 +7,6 @@
                 <div class="card-header">
                     Тема -
                     <span class="font-weight-bold">{{$thread->title}}</span>
-                </div>
-                <div class="card-body">
-                    <img
-                        src="{{$thread->image}}"
-                        class="rounded float-left"
-                        style="margin-right: 15px; max-width: 400px;"
-                    />
-                    <div class="text-justify">{{$thread->text}}</div>
 
                     <a
                         href="/message/{{$thread->id}}/create"
@@ -29,12 +21,22 @@
                         >В каталог</a
                     >
                 </div>
+                <div class="card-body">
+                    <img
+                        src="{{$thread->image}}"
+                        class="rounded float-left"
+                        style="margin-right: 15px; max-width: 400px;"
+                    />
+                    <div class="text-justify">{{$thread->text}}</div>
+                </div>
             </div>
 
             @foreach ($messages as $message)
             <div class="card mt-2">
                 <div class="card-body">
-                     <h6 class="card-title text-muted"><a href="/profile">{{$message->user_name}}</a></h6>
+                    <h6 class="card-title text-muted">
+                        <a href="/profile">{{$message->user_name}}</a>
+                    </h6>
                     @if($message->image)
                     <img
                         src="{{$message->image}}"
