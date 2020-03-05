@@ -35,7 +35,7 @@
             <div class="card mt-2">
                 <div class="card-body">
                     <h6 class="card-title text-muted">
-                        <a href="/profile">{{$message->user_name}}</a>
+                        <a href="/profile/{{$message->user_id}}">{{$message->user_name}}</a>
                     </h6>
                     @if($message->image)
                     <img

@@ -16,6 +16,7 @@ Auth::routes();
 
 Route::prefix('profile')->group(function () {
     Route::get('', 'ProfileController@show')->name('profile');
+    Route::get('/{id}', 'ProfileController@showAlien')->name('profile.showAlien');
     Route::get('edit', 'ProfileController@edit')->name('profile.edit');
     Route::post('store', 'ProfileController@store')->name('profile.store');
 });

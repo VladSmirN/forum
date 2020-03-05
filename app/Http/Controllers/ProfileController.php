@@ -61,4 +61,13 @@ class ProfileController extends Controller
 
         return view('profile/edit', compact('profile'));
     }
+    public function showAlien($id)
+    {
+        $columns = ['description', 'avatar', 'name'];
+        $profile = User::find($id, $columns);
+        $profile->avatar = Storage::url($profile->avatar);
+
+        return view('profile/showAlien', compact('profile'));
+    }
+
 }
