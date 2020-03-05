@@ -4,7 +4,16 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Каталог</div>
+                <div class="card-header">
+                    Каталог
+
+                    <a
+                        href="/thread/create"
+                        class="btn  btn-primary float-right "
+                        role="button"
+                        >Создать тему</a
+                    >
+                </div>
                 <div class="card-body">
                     <div class="row">
                         @foreach ($threads as $thread)
