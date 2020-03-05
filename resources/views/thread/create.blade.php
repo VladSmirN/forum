@@ -27,7 +27,7 @@
                                 <div class="alert alert-danger ">{{ $error }}</div>
                             @endforeach
                         {{Form::submit('Сохранить', ['class'=>'btn btn-primary float-right'])}}
-                        <a href="/profile" class="btn  bg-light float-right mr-3" role="button">Отмена</a>
+                        <a href="/catalog" class="btn  bg-light float-right mr-3" role="button">Отмена</a>
                     {!! Form::close() !!}
                     
                 </div>
