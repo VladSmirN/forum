@@ -43,6 +43,11 @@ class ThreadController extends Controller
         $columns = ['text', 'user_name','user_id', 'image', 'title','id'];
         $thread = Thread::find($id,$columns);
         $thread->image = Storage::url($thread->image);
-        return view('thread/show',compact('thread'));
+
+        $messages = Messages::where('thread_id',$thread->id)->paginate(300);
+        foreach($messages as $message){
+            $message->image = $message->image ? Storage::url($message->image) : false;
+        }
+        return view('thread/show',['thread'=>$thread,'messages'=>$messages]);
     }
 }
