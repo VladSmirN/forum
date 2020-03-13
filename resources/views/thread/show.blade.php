@@ -5,8 +5,7 @@
         <div class="col-md-12">
             <div class="card" style="background-color: #f5f5f5;">
                 <div class="card-header">
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
+                     
                             <span class="font-weight-bold"
                                 >{{$thread->title}} &nbsp; &nbsp;</span
                             >
@@ -17,22 +16,16 @@
                                     >{{$thread->user_name}}</span
                                 ></a
                             >
-                        </div>
-                        <div class="col-12 col-sm-6">
+                         
+                         
                             <a
                                 href="/message/{{$thread->id}}/create"
                                 class="btn  btn-primary float-right "
                                 role="button"
                                 >Оставить комментарий</a
                             >
-                            <a
-                                href="/catalog"
-                                class="btn  bg-light float-right mr-3"
-                                role="button"
-                                >В каталог</a
-                            >
-                        </div>
-                    </div>
+                            
+                    
                 </div>
                 <div class="card-body">
                     <img
