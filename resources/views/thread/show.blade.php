@@ -30,7 +30,7 @@
                 <div class="card-body">
                     <img
                         src="{{$thread->image}}"
-                        class="rounded float-left"
+                        class="rounded float-left card-img-top"
                         style="margin-right: 15px; max-width: 400px;"
                     />
                     <div class="text-justify">{{$thread->text}}</div>
@@ -49,7 +49,7 @@
                     @if($message->image)
                     <img
                         src="{{$message->image}}"
-                        class="rounded float-left"
+                        class="rounded float-left card-img-top"
                         style="margin-right: 15px; max-width: 400px;"
                     />
                     @endif
