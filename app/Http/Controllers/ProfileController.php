@@ -65,7 +65,12 @@ class ProfileController extends Controller
     {
         $columns = ['description', 'avatar', 'name'];
         $profile = User::find($id, $columns);
-        $profile->avatar = Storage::url($profile->avatar);
+
+        if (!$profile->avatar) {
+            $profile->avatar = '/default/profile.png';
+        } else {
+            $profile->avatar = Storage::url($profile->avatar);
+        }
 
         return view('profile/showAlien', compact('profile'));
     }
