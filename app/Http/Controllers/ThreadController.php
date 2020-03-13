@@ -12,6 +12,9 @@ class ThreadController extends Controller
 
     public function store(Request $request)
     {
+        if (!auth()->user()) {
+            return  redirect('login');
+        }
         $this->validate($request, [
             'title' => 'required',
             'text' => 'required',
@@ -29,7 +32,10 @@ class ThreadController extends Controller
         return redirect('catalog');
     }
     public function create()
-    {
+    {   
+        if (!auth()->user()) {
+            return  redirect('login');
+        }
         return view('thread/create');
     }
     public function catalog()
