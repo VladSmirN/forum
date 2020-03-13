@@ -34,7 +34,7 @@ class ThreadController extends Controller
     }
     public function catalog()
     {
-        $threads = Thread::paginate(12);
+        $threads = Thread::latest()->paginate(12);
         foreach($threads as $thread){
             $thread->image = Storage::url($thread->image);
         }
