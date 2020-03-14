@@ -1952,10 +1952,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['thread'],
-  mounted: function mounted() {// console.log("Component mounted.");
-  },
+  props: ["thread"],
   methods: {
     toMessages: function toMessages() {
       window.location = "/thread/".concat(this.thread.id);
@@ -37382,34 +37389,29 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "col-sm-12 col-md-6 col-lg-4 mt-2",
-      on: { click: _vm.toMessages }
-    },
-    [
-      _c(
-        "div",
-        {
-          staticClass: "card",
-          staticStyle: { width: "18rem", cursor: "pointer" }
-        },
-        [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: { src: _vm.thread.image, alt: "Card image cap" }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(_vm.thread.title))
-            ])
+  return _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-4 mt-2" }, [
+    _c(
+      "div",
+      {
+        staticClass: "card",
+        staticStyle: { width: "18rem", cursor: "pointer", height: "18rem" },
+        on: { click: _vm.toMessages }
+      },
+      [
+        _c("img", {
+          staticClass: "card-img-top ",
+          staticStyle: { height: "14rem" },
+          attrs: { src: _vm.thread.image, alt: "Card image cap" }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("p", { staticClass: "card-title" }, [
+            _vm._v(_vm._s(_vm.thread.title))
           ])
-        ]
-      )
-    ]
-  )
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
